@@ -1,0 +1,24 @@
+<head>
+    <title>HTML5 Email Input</title>
+</head>
+<body>
+    <form id="emailForm" action="http://www.example.org/subscribe.php" onsubmit="submitForm()">
+        <p>Please enter your email address:</p>
+        <input type="email" id="emailInput" name="email" required>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function submitForm() {
+            var userEmail = document.getElementById("emailInput").value;
+            var greetingMessage = document.createElement("div");
+            greetingMessage.textContent = "Thank you for subscribing with email: " + userEmail;
+            greetingMessage.style.fontSize = "100px"; 
+            greetingMessage.style.fontWeight = "bold"; 
+            document.body.innerHTML = ""; 
+            document.body.appendChild(greetingMessage); 
+            return false; 
+        }
+    </script>
+</body>
+</html>
